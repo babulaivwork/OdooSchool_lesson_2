@@ -1,32 +1,33 @@
 <odoo>
-    <record id="odoo_school_hr_hospital_doctor_list" model="ir.ui.view">
-        <field name="name">odoo.school.hr.hospital.doctor.list</field>
-        <field name="model">odoo.school.hr.hospital.doctor</field>
+    <record id="odoo_school_hr_hospital_patient_list" model="ir.ui.view">
+        <field name="name">odoo.school.hr.hospital.patient.list</field>
+        <field name="model">odoo.school.hr.hospital.patient</field>
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="specialty"/>
+                <field name="birth_date"/>
                 <field name="phone"/>
                 <field name="email"/>
             </list>
         </field>
     </record>
 
-    <record id="odoo_school_hr_hospital_doctor_form" model="ir.ui.view">
-        <field name="name">odoo.school.hr.hospital.doctor.form</field>
-        <field name="model">odoo.school.hr.hospital.doctor</field>
+    <record id="odoo_school_hr_hospital_patient_form" model="ir.ui.view">
+        <field name="name">odoo.school.hr.hospital.patient.form</field>
+        <field name="model">odoo.school.hr.hospital.patient</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group>
                         <group>
                             <field name="name"/>
-                            <field name="specialty"/>
+                            <field name="birth_date"/>
                             <field name="active"/>
                         </group>
                         <group>
                             <field name="phone"/>
                             <field name="email"/>
+                            <field name="address"/>
                         </group>
                     </group>
                     <notebook>
@@ -34,7 +35,7 @@
                             <field name="visit_ids">
                                 <list>
                                     <field name="name"/>
-                                    <field name="patient_id"/>
+                                    <field name="doctor_id"/>
                                     <field name="disease_id"/>
                                     <field name="visit_date"/>
                                 </list>
@@ -49,15 +50,15 @@
         </field>
     </record>
 
-    <record id="action_odoo_school_hr_hospital_doctor_window" model="ir.actions.act_window">
-        <field name="name">Лікарі</field>
+    <record id="action_odoo_school_hr_hospital_patient_window" model="ir.actions.act_window">
+        <field name="name">Patients</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">odoo.school.hr.hospital.doctor</field>
+        <field name="res_model">odoo.school.hr.hospital.patient</field>
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="odoo_school_hr_hospital_menu_doctor"
-              action="action_odoo_school_hr_hospital_doctor_window"
+    <menuitem id="odoo_school_hr_hospital_menu_patient"
+              action="action_odoo_school_hr_hospital_patient_window"
               parent="odoo_school_hr_hospital_main_menu"
-              name="Лікарі" sequence="200"/>
+              name="Patients" sequence="200"/>
 </odoo>

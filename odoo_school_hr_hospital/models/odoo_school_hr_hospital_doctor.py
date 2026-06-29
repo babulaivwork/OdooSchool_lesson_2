@@ -1,20 +1,20 @@
 import logging
 
-from odoo import fields, models
+from odoo import models, fields
 
 _logger = logging.getLogger(__name__)
 
 
-class OdooSchoolHrHospitalDoctor(models.Model):
+class OSHrHospitalDoctor(models.Model):
     _name = 'odoo.school.hr.hospital.doctor'
     _description = 'Doctor'
 
-    name = fields.Char(string='Name', required=True)
+    name = fields.Char()
     active = fields.Boolean(default=True)
-    specialty = fields.Char(string='Specialty')
-    phone = fields.Char(string='Phone')
-    email = fields.Char(string='Email')
-    notes = fields.Text(string='Notes')
+    specialty = fields.Char()
+    phone = fields.Char()
+    email = fields.Char()
+    notes = fields.Text()
 
     visit_ids = fields.One2many(
         comodel_name='odoo.school.hr.hospital.visit',
