@@ -16,6 +16,7 @@
 
     'data': [
         'security/ir.model.access.csv',
+        'data/disease_data.xml',
         'views/odoo_school_hr_hospital_menu_views.xml',
         'views/odoo_school_hr_hospital_doctor_views.xml',
         'views/odoo_school_hr_hospital_patient_views.xml',
@@ -24,6 +25,8 @@
     ],
 
     'demo': [
+        'demo/doctor_demo.xml',
+        'demo/patient_demo.xml',
     ],
 
     'images': ['static/description/icon.png'],
