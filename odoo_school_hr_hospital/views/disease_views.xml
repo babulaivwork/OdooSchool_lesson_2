@@ -45,7 +45,7 @@
     </record>
 
     <record id="action_odoo_school_hr_hospital_disease_window" model="ir.actions.act_window">
-        <field name="name">Diseases</field>
+        <field name="name">Види захворювань</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">odoo.school.hr.hospital.disease</field>
         <field name="view_mode">list,form</field>
@@ -54,5 +54,5 @@
     <menuitem id="odoo_school_hr_hospital_menu_disease"
               action="action_odoo_school_hr_hospital_disease_window"
               parent="odoo_school_hr_hospital_main_menu"
-              name="Diseases" sequence="300"/>
+              name="Види захворювань" sequence="300"/>
 </odoo>
