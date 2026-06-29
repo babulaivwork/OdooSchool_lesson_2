@@ -4,8 +4,6 @@ from odoo import models, fields
 
 _logger = logging.getLogger(__name__)
 
-CONST_EXP = "Odoo school constant example"
-
 
 class OSLBook(models.Model):
     _name = 'odoo.school.library.book'

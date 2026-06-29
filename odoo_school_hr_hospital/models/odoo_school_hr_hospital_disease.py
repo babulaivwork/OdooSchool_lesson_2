@@ -1,0 +1,21 @@
+import logging
+
+from odoo import models, fields
+
+_logger = logging.getLogger(__name__)
+
+
+class OSHrHospitalDisease(models.Model):
+    _name = 'odoo.school.hr.hospital.disease'
+    _description = 'Disease'
+
+    name = fields.Char()
+    active = fields.Boolean(default=True)
+    description = fields.Text()
+    code = fields.Char()
+
+    visit_ids = fields.One2many(
+        comodel_name='odoo.school.hr.hospital.visit',
+        inverse_name='disease_id',
+        string='Visits',
+    )

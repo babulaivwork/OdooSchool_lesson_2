@@ -1,0 +1,58 @@
+<odoo>
+    <record id="odoo_school_hr_hospital_disease_list" model="ir.ui.view">
+        <field name="name">odoo.school.hr.hospital.disease.list</field>
+        <field name="model">odoo.school.hr.hospital.disease</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="description"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="odoo_school_hr_hospital_disease_form" model="ir.ui.view">
+        <field name="name">odoo.school.hr.hospital.disease.form</field>
+        <field name="model">odoo.school.hr.hospital.disease</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Visits">
+                            <field name="visit_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="patient_id"/>
+                                    <field name="doctor_id"/>
+                                    <field name="visit_date"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_odoo_school_hr_hospital_disease_window" model="ir.actions.act_window">
+        <field name="name">Diseases</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">odoo.school.hr.hospital.disease</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="odoo_school_hr_hospital_menu_disease"
+              action="action_odoo_school_hr_hospital_disease_window"
+              parent="odoo_school_hr_hospital_main_menu"
+              name="Diseases" sequence="300"/>
+</odoo>
