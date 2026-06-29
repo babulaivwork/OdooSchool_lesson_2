@@ -1,0 +1,58 @@
+<odoo>
+    <record id="odoo_school_hr_hospital_visit_list" model="ir.ui.view">
+        <field name="name">odoo.school.hr.hospital.visit.list</field>
+        <field name="model">odoo.school.hr.hospital.visit</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="disease_id"/>
+                <field name="visit_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="odoo_school_hr_hospital_visit_form" model="ir.ui.view">
+        <field name="name">odoo.school.hr.hospital.visit.form</field>
+        <field name="model">odoo.school.hr.hospital.visit</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="patient_id"/>
+                            <field name="doctor_id"/>
+                            <field name="disease_id"/>
+                        </group>
+                        <group>
+                            <field name="visit_date"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Result">
+                            <field name="result"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_odoo_school_hr_hospital_visit_window" model="ir.actions.act_window">
+        <field name="name">Visits</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">odoo.school.hr.hospital.visit</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="odoo_school_hr_hospital_menu_visit"
+              action="action_odoo_school_hr_hospital_visit_window"
+              parent="odoo_school_hr_hospital_main_menu"
+              name="Visits" sequence="400"/>
+</odoo>
